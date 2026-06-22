@@ -47,16 +47,23 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font
 .note{font-size:clamp(13px,1.4vw,16px);color:var(--text-3);margin-top:clamp(8px,1.2vw,14px)}
 .rule{margin-top:clamp(22px,3vw,34px);padding-top:clamp(16px,2vw,22px);border-top:1px solid var(--border);font-size:clamp(15px,1.6vw,20px);color:var(--text-2);letter-spacing:.04em}
 .funnel{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(6px,.8vw,9px);margin-bottom:clamp(14px,1.8vw,20px)}
-.chip{padding:clamp(6px,.8vw,9px) clamp(11px,1.3vw,16px);border-radius:999px;font-size:clamp(13px,1.4vw,16px);white-space:nowrap}
+.chip{padding:clamp(6px,.8vw,9px) clamp(11px,1.3vw,16px);border-radius:999px;font-size:clamp(13px,1.4vw,16px);white-space:nowrap;background:rgba(26,25,22,.05);color:var(--text-2)}
 .chip.g{background:var(--g-bg);color:var(--g)}.chip.o{background:var(--o-bg);color:var(--o)}
 .sep{color:var(--text-3);font-size:clamp(13px,1.4vw,16px)}
-.legend{display:flex;gap:clamp(16px,2.2vw,28px);flex-wrap:wrap;font-size:clamp(13px,1.4vw,16px);color:var(--text-2)}
-.leg{display:inline-flex;align-items:center;gap:8px}
-.ld{width:9px;height:9px;border-radius:50%;display:inline-block}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,1.4vw,16px)}
 .card{background:var(--bg);border-radius:var(--radius-sm);padding:clamp(16px,2vw,26px)}
 .card h4{margin:0 0 5px;font-size:clamp(15px,1.7vw,20px);font-weight:500;color:var(--text)}
 .card p{margin:0;font-size:clamp(13px,1.5vw,17px);color:var(--text-2);line-height:1.7}
+.flow{display:flex;align-items:stretch;gap:clamp(8px,1.2vw,14px);margin:clamp(14px,1.8vw,22px) 0}
+.zone{flex:1;border-radius:var(--radius-sm);padding:clamp(16px,2vw,28px) clamp(10px,1.4vw,18px);text-align:center}
+.zone.g{background:var(--g-bg)}.zone.o{background:var(--o-bg)}.zone.n{background:rgba(26,25,22,.05)}
+.zt{font-size:clamp(15px,1.7vw,21px);font-weight:500}
+.zone.g .zt{color:var(--g)}.zone.o .zt{color:var(--o)}.zone.n .zt{color:var(--text)}
+.zs{font-size:clamp(11px,1.3vw,15px);margin-top:4px}
+.zone.g .zs{color:var(--g)}.zone.o .zs{color:var(--o)}.zone.n .zs{color:var(--text-2)}
+.mid{flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-3);min-width:clamp(34px,4.5vw,56px)}
+.mid .ar{font-size:clamp(15px,1.7vw,22px)}
+.mid .pct{font-size:clamp(11px,1.3vw,15px);font-weight:500;color:var(--text);margin-top:2px}
 .tl{margin-top:clamp(22px,3vw,38px)}
 .tl-now{position:relative;height:clamp(20px,2.4vw,26px)}
 .tl-now span{position:absolute;transform:translateX(-50%);font-size:clamp(13px,1.4vw,16px);font-weight:500;color:var(--g)}
@@ -76,7 +83,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font
 .dot{width:9px;height:9px;border-radius:999px;border:0;padding:0;background:var(--border-2);cursor:pointer;transition:background .15s,width .2s}
 .dot.on{background:var(--g);width:26px}
 .nav{display:flex;gap:10px}
-@media(max-width:680px){.grid2{grid-template-columns:1fr}.sub{max-width:none}.calc{flex-direction:column}.op{justify-content:center}}
+@media(max-width:680px){.grid2{grid-template-columns:1fr}.sub{max-width:none}.calc{flex-direction:column}.op{justify-content:center}.flow{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -93,51 +100,57 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font
   <section class="slide on">
     <div class="eyebrow">growth · sales designer · from July 2026</div>
     <div class="hero">Secured Value</div>
-    <div class="sub">Your one KPI — the monthly project value you turn from a proposal into a committed customer.</div>
+    <div class="sub">The monthly project value you secure with $500 deposits.</div>
     <div class="rule">one role&nbsp; ·&nbsp; one number&nbsp; ·&nbsp; one direction</div>
   </section>
 
   <section class="slide">
     <div class="eyebrow">the context</div>
-    <div class="title">It starts with the company OKRs</div>
-    <div class="sub">Last week we locked two company objectives. Today we turn one of them into your number.</div>
+    <div class="title">Company OKRs</div>
+    <div class="sub">Two company objectives. This KPI sits under OKR 1 — revenue.</div>
     <div class="kr"><h4><span class="ac-g">OKR 1</span> · growth — increase revenue</h4><p>fill the pipeline and land the design-stage framework · lead → 10%</p></div>
     <div class="kr"><h4><span class="ac-o">OKR 2</span> · delivery — set up a delivery engine</h4><p>turn committed projects into finished kitchens · 10% → photoshoot</p></div>
-    <div class="note">The Sales Designer KPI ladders up to OKR 1 — revenue.</div>
   </section>
 
   <section class="slide">
-    <div class="eyebrow"><span class="tag tag-g">growth</span> your lane</div>
-    <div class="title">From first call to the 10%</div>
+    <div class="eyebrow">the workflow</div>
+    <div class="title">Workflow &amp; ownership</div>
     <div class="funnel">
       <span class="chip g">Leads</span><span class="sep">→</span>
       <span class="chip g">Proposal</span><span class="sep">→</span>
       <span class="chip g">$500</span><span class="sep">→</span>
       <span class="chip g">Design</span><span class="sep">→</span>
       <span class="chip g">10%</span><span class="sep">→</span>
+      <span class="chip">100%</span><span class="sep">→</span>
       <span class="chip o">Delivery</span><span class="sep">→</span>
       <span class="chip o">Photoshoot</span>
     </div>
-    <div class="sub" style="margin-bottom:clamp(14px,1.8vw,22px)">You turn <span style="color:var(--text);font-weight:500">proposals into $500 commitments</span> and carry them through design to the 10%.</div>
-    <div class="rule">value is secured at the&nbsp; <span class="ac-g">$500</span> &nbsp;— the moment a prospect becomes a project</div>
+    <div class="flow">
+      <div class="zone g"><div class="zt">Growth</div><div class="zs">leads → 10%</div></div>
+      <div class="mid"><div class="ar">→</div><div class="pct">10%</div></div>
+      <div class="zone n"><div class="zt">Both teams</div><div class="zs">10% → 100%</div></div>
+      <div class="mid"><div class="ar">→</div><div class="pct">100%</div></div>
+      <div class="zone o"><div class="zt">Operations</div><div class="zs">100% → photoshoot</div></div>
+    </div>
+    <div class="note">Growth owns the pipeline through the 10%.</div>
   </section>
 
   <section class="slide">
     <div class="eyebrow">the concept</div>
     <div class="title">What a KPI is</div>
-    <div class="sub">The single number that best reflects your impact on the company OKR.</div>
+    <div class="sub">The single number that best reflects the role's impact on the company OKR.</div>
     <div class="grid2">
-      <div class="card"><h4>Your single number</h4><p>not a scorecard — one metric you own</p></div>
-      <div class="card"><h4>Ladders to the OKR</h4><p>moving it moves company revenue</p></div>
-      <div class="card"><h4>Compass &amp; goal</h4><p>shows where you are, and where to get to</p></div>
-      <div class="card"><h4>Reviewed monthly</h4><p>with lightweight weekly check-ins</p></div>
+      <div class="card"><h4>One single number</h4><p>one metric you own</p></div>
+      <div class="card"><h4>Tied to the OKR</h4><p>moving it moves company revenue</p></div>
+      <div class="card"><h4>Tracker and goal</h4><p>where you are, and where to go</p></div>
+      <div class="card"><h4>Reviewed monthly</h4><p>with weekly check-ins</p></div>
     </div>
   </section>
 
   <section class="slide">
-    <div class="eyebrow"><span class="tag tag-g">growth</span> your KPI</div>
+    <div class="eyebrow">the KPI</div>
     <div class="title">Monthly Secured Value</div>
-    <div class="sub">The total project value of customers who commit with a $500 deposit in the month — credited to you.</div>
+    <div class="sub">The total project value of customers who commit with a $500 deposit in the month.</div>
     <div class="calc">
       <div class="fac"><b>Proposals</b><span>you present</span></div>
       <div class="op">×</div>
@@ -147,13 +160,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font
       <div class="op">=</div>
       <div class="fac res"><b>Secured</b><span>monthly value</span></div>
     </div>
-    <div class="note">Counted at the $500 commitment — the leading signal of revenue, not a lagging one.</div>
+    <div class="note">Counted at the $500 commitment, not at delivery.</div>
   </section>
 
   <section class="slide">
     <div class="eyebrow">how it activates</div>
-    <div class="title">June to learn, July to hit</div>
-    <div class="sub">We track in calendar months. June is calculated backwards as a baseline — no target. From July, the number is both your tracker and your goal.</div>
+    <div class="title">Baseline and goal</div>
+    <div class="sub">Tracked by calendar month. June sets the baseline. From July, it's the goal.</div>
     <div class="tl">
       <div class="tl-now"><span style="left:31%">now</span></div>
       <div class="tl-track">
@@ -165,33 +178,33 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font
       <div class="tl-months"><div>June · baseline</div><div>July · goal ▲</div><div>August</div></div>
     </div>
     <div class="grid2" style="margin-top:clamp(22px,3vw,36px)">
-      <div class="card"><h4>June · tracking only</h4><p>measured backwards from June 1 to set your baseline</p></div>
-      <div class="card"><h4>From July · tracking + goal</h4><p>the target you aim to hit, every month</p></div>
+      <div class="card"><h4>June · tracking only</h4><p>measured backwards from June 1 to set the baseline</p></div>
+      <div class="card"><h4>From July · tracking + goal</h4><p>the target to hit, every month</p></div>
     </div>
   </section>
 
   <section class="slide">
-    <div class="eyebrow"><span class="tag tag-g">the target</span> from July · per designer</div>
+    <div class="eyebrow">the target · from July · per designer</div>
     <div class="hero">$56,250</div>
-    <div class="sub">Monthly Secured Value per Sales Designer — achievable, and a little ambitious.</div>
+    <div class="sub">Monthly Secured Value per Sales Designer.</div>
     <div class="rule">5 proposals&nbsp; ·&nbsp; 25% to $500&nbsp; ·&nbsp; $45,000 average project</div>
   </section>
 
   <section class="slide">
-    <div class="eyebrow">the inputs</div>
-    <div class="title">What the history tells us</div>
+    <div class="eyebrow">from the last roadmap</div>
+    <div class="title">The inputs</div>
     <div class="grid2">
-      <div class="card"><h4>$410,000 secured</h4><p>last roadmap, via $500 deposits</p></div>
-      <div class="card"><h4>$41,000 average</h4><p>project value per committed customer</p></div>
-      <div class="card"><h4>~5 proposals / month</h4><p>current pace a designer presents</p></div>
-      <div class="card"><h4>23% to $500</h4><p>proposals that convert to a deposit</p></div>
+      <div class="card"><h4>43 proposals</h4><p>presented last roadmap</p></div>
+      <div class="card"><h4>$410,000 secured</h4><p>via $500 deposits</p></div>
+      <div class="card"><h4>$41,000 average</h4><p>per committed project</p></div>
+      <div class="card"><h4>23% to $500</h4><p>proposals that converted</p></div>
     </div>
-    <div class="note">The bottleneck was never demand — it was the 10% conversion. That's exactly what the new design-stage framework is built to fix.</div>
+    <div class="note">The main bottleneck was 10% conversion — that's what the design-stage framework now targets.</div>
   </section>
 
   <section class="slide">
     <div class="eyebrow">the math</div>
-    <div class="title">Tuned up, not invented</div>
+    <div class="title">The calculation</div>
     <div class="calc">
       <div class="fac"><b>5</b><span>proposals / mo</span></div>
       <div class="op">×</div>
@@ -201,34 +214,34 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font
       <div class="op">=</div>
       <div class="fac res"><b>$56,250</b><span>per month</span></div>
     </div>
-    <div class="sub">A modest lift on proven numbers — about 1.25 committed projects a month, at a higher average value.</div>
+    <div class="sub">About 1.25 committed projects a month, at a higher average value.</div>
   </section>
 
   <section class="slide">
     <div class="eyebrow">what has to be true</div>
-    <div class="title">Three honest assumptions</div>
-    <div class="kr"><h4><span class="ac-g">Conversion</span> · 23% → 25%</h4><p>a sharper proposal and follow-up lift proposal → $500 by two points</p></div>
-    <div class="kr"><h4><span class="ac-g">Average project</span> · $41,000 → $45,000</h4><p>scope and material mix trend up as we present with more confidence</p></div>
-    <div class="kr"><h4><span class="ac-g">10% velocity</span> · solved</h4><p>the design-stage framework clears the bottleneck between $500 and 10%</p></div>
+    <div class="title">Assumptions</div>
+    <div class="kr"><h4><span class="ac-g">Conversion</span> · 23% → 25%</h4><p>proposal → $500 improves by two points</p></div>
+    <div class="kr"><h4><span class="ac-g">Average project</span> · $41,000 → $45,000</h4><p>scope and material mix trend up</p></div>
+    <div class="kr"><h4><span class="ac-g">10% velocity</span> · solved</h4><p>the design-stage framework clears the $500 → 10% bottleneck</p></div>
     <div class="note">If any of these shifts, we revisit the number at the end of the roadmap.</div>
   </section>
 
   <section class="slide">
-    <div class="eyebrow">rhythm</div>
+    <div class="eyebrow">cadence</div>
     <div class="title">How we track it</div>
-    <div class="sub">A tight loop inside the growth team — a quick weekly pulse, a deeper monthly review.</div>
+    <div class="sub">A weekly update and a monthly review inside the growth team.</div>
     <div class="grid2">
-      <div class="card"><h4>Weekly update</h4><p>each designer's secured value, refreshed every week</p></div>
-      <div class="card"><h4>Monthly review</h4><p>the growth team reviews the month together and resets focus</p></div>
+      <div class="card"><h4>Weekly update</h4><p>each designer's secured value, refreshed weekly</p></div>
+      <div class="card"><h4>Monthly review</h4><p>the growth team reviews the month together</p></div>
     </div>
-    <div class="note">The live KPI dashboard refreshes Mondays — your number is always current.</div>
+    <div class="note">The live KPI dashboard refreshes Mondays.</div>
   </section>
 
   <section class="slide">
     <div class="eyebrow">over to Juli</div>
     <div class="title">The tracking document</div>
-    <div class="sub">Julieta will walk through how each designer tracks their secured value — measured from June 1, backwards.</div>
-    <div class="rule">questions welcome&nbsp; →&nbsp; then we open the tracker</div>
+    <div class="sub">Julieta will show how each designer tracks their secured value, starting from June 1.</div>
+    <div class="rule">Questions, then we open the tracker.</div>
   </section>
 
 </div>
